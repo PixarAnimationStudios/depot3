@@ -31,7 +31,10 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <ul>
+        <h2>
+<a id="welcome" class="anchor" href="#welcome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome!</h2>
+
+<ul>
 <li><a href="#what-is-d3">What is d3?</a></li>
 <li><a href="#history">History</a></li>
 <li><a href="#installing-d3">Installing d3</a></li>
@@ -86,6 +89,8 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software LLC</a>. 
 
 <p>d3 was written for Pixar's environment, which is very simple in comparison with what many other Casper user's have.  That said, part of the reason we've made it open-source is with the hopes that others will be able to improve it, making it useful for a wider range of Casper users.</p>
 
+<p><a href="Welcome">(top)</a></p>
+
 <h2>
 <a id="history" class="anchor" href="#history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>History</h2>
 
@@ -117,10 +122,14 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software LLC</a>. 
 
 <p>The JSS module was created specifically as the API connection for d3, but has become useful in it's own right for all of our access to the API. d3 itself took another 18 months before the first upload to <a href="https://github.com/PixarAnimationStudios/depot3">github</a>.</p>
 
+<p><a href="Welcome">(top)</a></p>
+
 <h2>
 <a id="installing-d3" class="anchor" href="#installing-d3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing d3</h2>
 
 <p>To start using d3 with your JSS Take a look at the <a href="https://github.com/PixarAnimationStudios/depot3/wiki/Setup">Setup Guide</a></p>
+
+<p><a href="Welcome">(top)</a></p>
 
 <h2>
 <a id="basic-vocabulary" class="anchor" href="#basic-vocabulary" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Vocabulary</h2>
@@ -134,10 +143,14 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software LLC</a>. 
 
 <p>When a basename alone is used to specify a package, it always refers to the currently live package (<a href="#status">see Status below)</a> for the basename. </p>
 
+<p><a href="Welcome">(top)</a></p>
+
 <h3>
 <a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h3>
 
 <p>Every package also has a version, which is the version of the thing installed by the package. A package that installs Transmogrifier might install version 2.1.2, while another package that installs Transmogrifier might install version 2.2.3. Versions can include any alpha-numeric characters, e.g. "12.5a3", but they can't include spaces, which will be converted to underscores.</p>
+
+<p><a href="Welcome">(top)</a></p>
 
 <h3>
 <a id="revision" class="anchor" href="#revision" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Revision</h3>
@@ -145,6 +158,8 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software LLC</a>. 
 <p>A package's revision is an integer representing how many times a single version of a basename has been added to d3. </p>
 
 <p>When Transmogrifier 2.2.3 is added to d3 for the first time, it's revision will be 1.  Later, a problem may be discovered with the .pkg itself, and a new .pkg for version 2.2.3 might be created. When added to d3, the fixed .pkg will have revision 2.</p>
+
+<p><a href="Welcome">(top)</a></p>
 
 <h3>
 <a id="edition" class="anchor" href="#edition" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Edition</h3>
@@ -155,20 +170,28 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software LLC</a>. 
 
 <p>Only one edition of a basename can be installed at a time.</p>
 
+<p><a href="Welcome">(top)</a></p>
+
 <h3>
 <a id="package" class="anchor" href="#package" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Package</h3>
 
 <p>A package in d3 is a package in Casper. It can be used as any other package in Casper, in policies and Casper Remote (but be careful with that!). When a package is added to d3 (possibly by importing from an existing Casper package), extra data about it is stored in the JSS, which allows for d3's enhanced features. </p>
+
+<p><a href="Welcome">(top)</a></p>
 
 <h3>
 <a id="receipt" class="anchor" href="#receipt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Receipt</h3>
 
 <p>A receipt is the on-disk representation of a d3 Package installed onto a client computer. Receipts have basenames, editions, and status, just like packages. Only one receipt per basename can be installed at a time. d3 receipts are stored separately from JAMF receipts and Apple .pkg receipts.</p>
 
+<p><a href="Welcome">(top)</a></p>
+
 <h3>
 <a id="status" class="anchor" href="#status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Status</h3>
 
 <p>As a package spends time in d3, its status will change. Here are the statuses and a brief description of each. Receipts update their status from their matching package at every sync. For details about the signifigance of each status, see the full discussion of <a href="https://github.com/PixarAnimationStudios/depot3/wiki/Packages">packages</a> and <a href="https://github.com/PixarAnimationStudios/depot3/wiki/Receipts">receipts</a>.</p>
+
+<p><a href="Welcome">(top)</a></p>
 
 <h5>
 <a id="pilot" class="anchor" href="#pilot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pilot</h5>
@@ -196,6 +219,8 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software LLC</a>. 
 <a id="missing" class="anchor" href="#missing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>missing</h5>
 
 <p>A package that is still listed in d3, but has been removed from Casper.  Or, a <a href="https://github.com/PixarAnimationStudios/depot3/wiki/Receipts">receipt</a> who's the matching package has status 'missing', or no longer exists in d3.</p>
+
+<p><a href="Welcome">(top)</a></p>
 
 <h3>
 <a id="puppytime-1" class="anchor" href="#puppytime-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PuppyTime!</h3>
@@ -225,12 +250,16 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software LLC</a>. 
 <li>run a policy which will reboot the machine (and possibly do other things first)</li>
 </ul>
 
+<p><a href="Welcome">(top)</a></p>
+
 <h2>
 <a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
 
 <p>The <a href="https://github.com/PixarAnimationStudios/depot3/wiki">GitHub project wiki</a> has the full documentation for Casper administrators who want to use d3.</p>
 
 <p>The Ruby module documentation for both <a href="http://www.rubydoc.info/gems/depot3">d3</a>, and <a href="http://www.rubydoc.info/gems/ruby-jss">ruby-jss</a> are available for developers who wish to contribute, or just use the modules for their own projects.</p>
+
+<p><a href="Welcome">(top)</a></p>
 
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
@@ -257,6 +286,8 @@ distributed under the Apache License with the above modification is
 distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 KIND, either express or implied. See the Apache License for the specific
 language governing permissions and limitations under the Apache License.</p>
+
+<p><a href="Welcome">(top)</a></p>
       </section>
     </div>
 
