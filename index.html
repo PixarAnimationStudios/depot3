@@ -76,6 +76,19 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software</a>. It w
 
 <p>d3 is written in Ruby and available as a <a href="https://github.com/PixarAnimationStudios/depot3">github project</a> and a <a href="https://rubygems.org/gems/depot3/">Ruby gem</a> called 'depot3'. It interfaces with Casper mostly via it's REST API using the <a href="https://github.com/PixarAnimationStudios/ruby-jss">JSS Ruby module</a>. It also accesses the JSS's backend MySQL database directly to provide enhanced features.</p>
 
+<p>d3 was written to meet Pixar's needs, in our relatively simple Casper environment. Our basic needs include:</p>
+
+<ul>
+<li>Fully usable from the command-line and scriptable.</li>
+<li>Ease-of-use for software developers to package, pilot, and deploy their wares.</li>
+<li>Automatic installation of software based on tags or group membership</li>
+<li>Automatic updating of installed software.</li>
+<li>The ability to pilot pre-release software, and disable auto-updating during pilot.</li>
+<li>Automatic removal of unused software</li>
+</ul>
+
+<p>That said, part of the reason we've made it open-source is with the hopes that others will be able to improve it, making it useful for a wider range of Casper users.</p>
+
 <h5>
 <a id="what-d3-isnt" class="anchor" href="#what-d3-isnt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What d3 isn't</h5>
 
@@ -86,8 +99,6 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software</a>. It w
 <p>d3 will not work with Cloud instances of the JSS. It requires MySQL access to the JSS database. </p>
 
 <p>It also requires that the the master distribution point be a regular fileshare distribution point, not a JDS.  There is minimal support for a cloud-based distribution point for failover access to package installers (the Casper REST API has no access to cloud distribution point data)</p>
-
-<p>d3 was written for Pixar's environment, which is very simple in comparison with what many other Casper user's have.  That said, part of the reason we've made it open-source is with the hopes that others will be able to improve it, making it useful for a wider range of Casper users.</p>
 
 <p><a href="#welcome">(top)</a></p>
 
@@ -262,7 +273,7 @@ Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software</a>. It w
 <p><a href="#welcome">(top)</a></p>
 
 <h2>
-<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h2>
+<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CONTACT</h2>
 
 <ul>
 <li><a href="mailto:d3@pixar.com">Email the developer</a></li>
