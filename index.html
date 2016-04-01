@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="d3 : A (soon to be open-sourced) package deployment and patch management system for OS X that enhances the Casper Suite, an enterprise-level management system for Apple devices from JAMF Software. PLEASE NOTE: d3 isn&#39;t released yet, many links below don&#39;t work.  We&#39;re aiming for the first week of April. Sorry for the premature link to here in Slack! Thanks!">
+    <meta name="description" content="d3 :  A software deployment and patch management system for OS X, built on the Casper Suite.">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/PixarAnimationStudios/depot3">View on GitHub</a>
 
           <h1 id="project_title">d3</h1>
-          <h2 id="project_tagline">A (soon to be open-sourced) package deployment and patch management system for OS X that enhances the Casper Suite, an enterprise-level management system for Apple devices from JAMF Software. PLEASE NOTE: d3 isn&#39;t released yet, many links below don&#39;t work.  We&#39;re aiming for the first week of April. Sorry for the premature link to here in Slack! Thanks!</h2>
+          <h2 id="project_tagline"> A software deployment and patch management system for OS X, built on the Casper Suite.</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/PixarAnimationStudios/depot3/zipball/master">Download this project as a .zip file</a>
@@ -31,252 +31,20 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2>
-<a id="welcome" class="anchor" href="#welcome" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome</h2>
+        <p>d3 is a software deployment and patch manangement system for OS X that enhances the capabilities of the Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software</a>. It was created by <a href="http://www.pixar.com/">Pixar Animation Studios</a>.</p>
 
 <ul>
-<li><a href="#what-is-d3">What is d3?</a></li>
-<li><a href="#history">History</a></li>
-<li><a href="#installing-d3">Installing d3</a></li>
-<li>
-<a href="#basic-vocabulary">Basic vocabulary</a>
-
-<ul>
-<li><a href="#basename">Basename</a></li>
-<li><a href="#version">Version</a></li>
-<li><a href="#revision">Revision</a></li>
-<li><a href="#edition">Edition</a></li>
-<li><a href="#package">Package</a></li>
-<li><a href="#receipt">Receipt</a></li>
-<li><a href="#status">Status</a></li>
-<li><a href="#puppytime">Puppytime!</a></li>
+<li><a href="https://github.com/PixarAnimationStudios/depot3/wiki/Welcome">Welcome</a></li>
+<li><a href="https://github.com/PixarAnimationStudios/depot3/wiki">Documentation</a></li>
+<li><a href="https://github.com/PixarAnimationStudios/depot3/">Source</a></li>
+<li><a href="https://rubygems.org/gems/depot3">Ruby Gem</a></li>
 </ul>
-</li>
-<li><a href="#documentation">Documentation</a></li>
-<li><a href="#license">License</a></li>
-</ul>
-
-<h2>
-<a id="what-is-d3" class="anchor" href="#what-is-d3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is d3?</h2>
-
-<p>d3 is a package deployment and patch management system for OS X that enhances the 
-Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software</a>. It was created by Pixar Animation Studios.</p>
-
-<p>d3 adds these capabilities and more to Casper's package handling:</p>
-
-<ul>
-<li>Automatic software updates on clients when new versions are released on the server</li>
-<li>Pre-release piloting of new packages</li>
-<li>Customizable slideshow presented during logout/reboot installs</li>
-<li>Installs and uninstalls are conditional on the exit status of pre-flight scripts</li>
-<li>Packages can be expired (auto-uninstalled) after a period of disuse</li>
-<li>Both the client and admin tools are command-line only and fully scriptable</li>
-<li>Admin command-line options allow integration with developer workflows and package-retrieval tools</li>
-</ul>
-
-<p>d3 is written in Ruby and available as a <a href="https://github.com/PixarAnimationStudios/depot3">github project</a> and a <a href="https://rubygems.org/gems/depot3/">Ruby gem</a> called 'depot3'. It interfaces with Casper mostly via it's REST API using the <a href="https://github.com/PixarAnimationStudios/ruby-jss">JSS Ruby module</a>. It also accesses the JSS's backend MySQL database directly to provide enhanced features.</p>
-
-<p>d3 was written to meet Pixar's needs, in our relatively simple Casper environment. Our needs included:</p>
-
-<ul>
-<li>Fully usable from the command-line and scriptable.</li>
-<li>Ease-of-use for software developers to package, pilot, and deploy their wares.</li>
-<li>Automatic installation of software based on tags or group membership</li>
-<li>Automatic updating of installed software.</li>
-<li>The ability to pilot pre-release software, and disable auto-updating during pilot.</li>
-<li>Automatic removal of unused software</li>
-</ul>
-
-<p>That said, part of the reason we've made it open-source is with the hopes that others will be able to improve it, making it useful for a wider range of Casper users.</p>
-
-<h5>
-<a id="what-d3-isnt" class="anchor" href="#what-d3-isnt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What d3 isn't</h5>
-
-<p>d3 makes no attempt to automatically search and retrieve newly-available patches or updates from the internet. It works with packages you provide or create (d3 can build them for you!)</p>
-
-<p>An eventual goal is to integrate a tool like <a href="https://autopkg.github.io/autopkg/">AutoPkg</a> for this purpose.</p>
-
-<p>d3 will not work with Cloud instances of the JSS. It requires MySQL access to the JSS database. </p>
-
-<p>It also requires that the the master distribution point be a regular fileshare distribution point, not a JDS.  There is minimal support for a cloud-based distribution point for failover access to package installers (the Casper REST API has no access to cloud distribution point data)</p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h2>
-<a id="history" class="anchor" href="#history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>History</h2>
-
-<h4>
-<a id="depot-and-d2" class="anchor" href="#depot-and-d2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>depot and d2</h4>
-
-<p>Nearly 30 years ago, Pixar's original NFS-based software deployment system for Unix workstations was called "depot". When it had outgrown itself, a replacement based on RPM packages was created and called "depot2", or "d2" for short. When Mac OS X arrived at Pixar in 2002, the Mac team adopted many of the Linux team's existing tools, including d2. </p>
-
-<h4>
-<a id="puppytime" class="anchor" href="#puppytime" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PuppyTime!</h4>
-
-<p>d2 was useful as far it went, but Macs aren't Linux, and d2 couldn't handle the installation of .pkg's, especially those requiring a reboot. To deal with those, Pixar's Mac team created PuppyTime! - a system that could install .pkgs from a server, and if they needed a reboot, would queue them to be installed at the next logout. </p>
-
-<p>During logout installation, something had to be displayed on the screen, or the users would think the machine was crashed, and might force-reboot.  So puppytime would display a slideshow of cute puppies to let the users know what was up, and placate their mood.</p>
-
-<h4>
-<a id="d3" class="anchor" href="#d3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>d3</h4>
-
-<p>By 2008 the original developer of d2 had left, and d2's sustainability for the Macs was waning. Also, the world of Mac Sys Admins was changing to become what it is today. In 2009 the Pixar Mac team starting looking at third-party tools that might replace d2.  </p>
-
-<p>Nothing seemed to be an exact fit for our needs, but the Casper Suite from JAMF Software seemed promising, and offered other tools very similar to our own home-grown Mac infrastructure. We realized that with a little customization, Casper could provide the features we wanted.  The first version of d3 was created in 2010 to add those features. </p>
-
-<p>The second version of d3, which utilised the newly-released Casper REST API, was presented at the 2012 JAMF Nation User Conference in Minneapolis. One of the first questions from the audience was "Is it open-sourced?", to which we had to say no. </p>
-
-<h4>
-<a id="open-source" class="anchor" href="#open-source" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>open-source</h4>
-
-<p>Since then, work has been progressing on the third version of d3 with a goal of enhancing its features and refactoring the code-base for eventual open-source release. The first step towards that goal was the 2014 release of the <a href="https://github.com/PixarAnimationStudios/ruby-jss">ruby-jss</a>, a Ruby module which provides quick-and-easy access to the Casper REST API. </p>
-
-<p>ruby-jss was created specifically as the API connection for d3, but has become useful in it's own right for all of our access to the API. d3 itself took another 18 months before the first upload to <a href="https://github.com/PixarAnimationStudios/depot3">github</a>.</p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h2>
-<a id="installing-d3" class="anchor" href="#installing-d3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installing d3</h2>
-
-<p>To start using d3 with your JSS Take a look at the <a href="https://github.com/PixarAnimationStudios/depot3/wiki/home#table-of-contents">Setup Guide</a></p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h2>
-<a id="basic-vocabulary" class="anchor" href="#basic-vocabulary" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basic Vocabulary</h2>
-
-<p>The following terms are fundamental to understanding any discussion of d3.</p>
-
-<h3>
-<a id="basename" class="anchor" href="#basename" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Basename</h3>
-
-<p>A basename in d3 is a word used to identify all packages that install any version of the same thing. Every package has a basename, and will share it with other packages that install the same thing. For example "transmogrifier" could refer to all packages in d3 that install any version of Transmogrifier.app. </p>
-
-<p>When a basename alone is used to specify a package, it always refers to the currently live package (<a href="#status">see Status below)</a> for the basename. </p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h3>
-<a id="version" class="anchor" href="#version" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Version</h3>
-
-<p>Every package also has a version, which is the version of the thing installed by the package. A package that installs Transmogrifier might install version 2.1.2, while another package that installs Transmogrifier might install version 2.2.3. Versions can include any alpha-numeric characters, e.g. "12.5a3", but they can't include spaces, which will be converted to underscores.</p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h3>
-<a id="revision" class="anchor" href="#revision" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Revision</h3>
-
-<p>A package's revision is an integer representing how many times a single version of a basename has been added to d3. </p>
-
-<p>When Transmogrifier 2.2.3 is added to d3 for the first time, it's revision will be 1.  Later, a problem may be discovered with the .pkg itself, and a new .pkg for version 2.2.3 might be created. When added to d3, the fixed .pkg will have revision 2.</p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h3>
-<a id="edition" class="anchor" href="#edition" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Edition</h3>
-
-<p>The edition is a combination of basename, version, and revision of a package, joined by hyphens. It is a unique identifier for each package in d3.</p>
-
-<p>For example, there might be three editions of the basename 'transmogrifier' in d3 at the same time:  transmogrifier-2.1.2-1, transmogrifier-2.1.2-2, and transmogrifier-2.2.3-1. When specifying any package that isn't live (<a href="#status">see Status below)</a>, the edition is used to identify it.</p>
-
-<p>Only one edition of a basename can be installed at a time.</p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h3>
-<a id="package" class="anchor" href="#package" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Package</h3>
-
-<p>A package in d3 is a package in Casper. It can be used as any other package in Casper, in policies and Casper Remote (but be careful with that!). When a package is added to d3 (possibly by importing from an existing Casper package), extra data about it is stored in the JSS, which allows for d3's enhanced features. </p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h3>
-<a id="receipt" class="anchor" href="#receipt" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Receipt</h3>
-
-<p>A receipt is the on-disk representation of a d3 Package installed onto a client computer. Receipts have basenames, editions, and status, just like packages. Only one receipt per basename can be installed at a time. d3 receipts are stored separately from JAMF receipts and Apple .pkg receipts.</p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h3>
-<a id="status" class="anchor" href="#status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Status</h3>
-
-<p>As a package spends time in d3, its status will change. Here are the statuses and a brief description of each. Receipts update their status from their matching package at every sync. For details about the signifigance of each status, see the full discussion of <a href="https://github.com/PixarAnimationStudios/depot3/wiki/Packages">packages</a> and <a href="https://github.com/PixarAnimationStudios/depot3/wiki/Receipts">receipts</a>.</p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h5>
-<a id="pilot" class="anchor" href="#pilot" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>pilot</h5>
-
-<p>When a package is first added to d3, it's considered to be 'in pilot'. Pilot packages are not yet approved for general deployment, but can be manually installed (i.e. 'piloted') on individual machines for testing purposes.</p>
-
-<h5>
-<a id="live" class="anchor" href="#live" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>live</h5>
-
-<p>Once a package has been piloted and is ready for general deployment, it is released by making it 'live'.</p>
-
-<p>There can only be one live package per <a href="#basename">basename</a> at a time, and using a basename to refer to a package will always yield the currently live one (if any). </p>
-
-<h5>
-<a id="deprecated" class="anchor" href="#deprecated" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>deprecated</h5>
-
-<p>A package that was once live, but has been superceded by a newer edition of it's basename being made live.</p>
-
-<h5>
-<a id="skipped" class="anchor" href="#skipped" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>skipped</h5>
-
-<p>A package that is older than the currently live one for its basename, but was never made live itself. </p>
-
-<h5>
-<a id="missing" class="anchor" href="#missing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>missing</h5>
-
-<p>A package that is still listed in d3, but has been removed from Casper.  Or, a <a href="#receipt">receipt</a> who's the matching package has status 'missing', or no longer exists in d3.</p>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h3>
-<a id="puppytime-1" class="anchor" href="#puppytime-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PuppyTime!</h3>
-
-<p>Some packages require a reboot, so auto-installing them can be problematic. </p>
-
-<p>When d3 installs a package that needs a reboot, it doesn't actually install it, but adds its edition to the "puppy queue" - a list of packages awaiting logout before they are installed.</p>
-
-<p>When a package is added to the puppy queue, a policy is potentially triggered which can notify the user to log out as soon as possible.</p>
-
-<p>When logout happens, a logout policy is execute which runs <code>puppytime</code>.</p>
-
-<p>Puppytime examines the queue, and installs any packages listed. While doing so, it displays a slideshow - originally of cute puppies - to let the user know the machine isn't hung.</p>
-
-<p>The default images that come with d3 are still puppies, but you can use any images you'd like.</p>
-
-<p>When the installs are complete, puppytime will either:</p>
-
-<ul>
-<li>reboot the machine with <code>shutdown -r now</code>
-</li>
-</ul>
-
-<p>or</p>
-
-<ul>
-<li>run a policy which will reboot the machine (and possibly do other things first)</li>
-</ul>
-
-<p><a href="#welcome">(top)</a></p>
-
-<h2>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
-
-<p>The <a href="https://github.com/PixarAnimationStudios/depot3/wiki">GitHub project wiki</a> has the full documentation for Casper administrators who want to use d3.</p>
-
-<p>The Ruby module documentation for both <a href="http://www.rubydoc.info/gems/depot3">d3</a>, and <a href="http://www.rubydoc.info/gems/ruby-jss">ruby-jss</a> are available for developers who wish to contribute, or just use the modules for their own projects.</p>
-
-<p><a href="#welcome">(top)</a></p>
 
 <h2>
 <a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h2>
 
 <ul>
-<li><a href="mailto:d3@pixar.com">Email the developer</a></li>
+<li><a href="mailto:d3@pixar.com">Email</a></li>
 <li>
 <a href="https://macadmins.slack.com/messages/#d3/">Macadmins Slack Channel</a> (<a href="https://github.com/glenfarclas17" class="user-mention">@glenfarclas17</a>)</li>
 </ul>
@@ -306,8 +74,6 @@ distributed under the Apache License with the above modification is
 distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 KIND, either express or implied. See the Apache License for the specific
 language governing permissions and limitations under the Apache License.</p>
-
-<p><a href="#welcome">(top)</a></p>
       </section>
     </div>
 
