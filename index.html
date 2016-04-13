@@ -1,91 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="d3 :  A software deployment and patch management system for OS X, built on the Casper Suite.">
+<head>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="jss ruby gem">
+  <meta name="author" content="stoked@pixar.com">
 
-    <title>d3</title>
-  </head>
+  <title>d3</title>
 
-  <body>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/PixarAnimationStudios/depot3">View on GitHub</a>
+  <!-- Scrolling nav CSS -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
 
-          <h1 id="project_title">d3</h1>
-          <h2 id="project_tagline"> A software deployment and patch management system for OS X, built on the Casper Suite.</h2>
+  <!-- Font Awesome CSS -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/PixarAnimationStudios/depot3/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/PixarAnimationStudios/depot3/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,400' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+  <!-- Main CSS -->
+  <link href="css/main.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="#page-top">d3</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+          <li class="hidden">
+            <a class="page-scroll" href="#page-top"></a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#about"> <i class="fa fa-gears"></i> About</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#contact"><i class="fa fa-envelope-o"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container -->
+  </nav>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>d3 is a software deployment and patch management system for OS X that enhances the capabilities of the Casper Suite from <a href="http://www.jamfsoftware.com/">JAMF Software</a>. It was created by <a href="http://www.pixar.com/">Pixar Animation Studios</a>.</p>
+  <!-- Intro Section -->
+  <section id="intro" class="intro-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <h1>d3</h1>
+          <p>d3 is a software deployment and patch management system for OS X that enhances the capabilities of the <a href="http://www.jamfsoftware.com/products/casper-suite/">Casper Suite</a> from
+          <a href="http://www.jamfsoftware.com/">JAMF Software, LLC</a>. It was created by <a href="http://www.pixar.com/">Pixar Animation Studios</a>.</p>
+        </div>
+      </div>
 
-<ul>
-<li><a href="https://github.com/PixarAnimationStudios/depot3/wiki/Welcome">Welcome</a></li>
-<li><a href="https://github.com/PixarAnimationStudios/depot3/wiki">Documentation</a></li>
-<li><a href="https://github.com/PixarAnimationStudios/depot3/">Source</a></li>
-<li><a href="https://rubygems.org/gems/depot3">Ruby Gem</a></li>
-</ul>
+      <div class="row">
+        <hr />
 
-<h2>
-<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h2>
+        <div class="col-sm-3">
+          <a class="homePanelLink" href="https://github.com/PixarAnimationStudios/depot3/wiki">
+            <div class="panel panel-default homePanel">
+              <div class="panel-body">
+                <h2>Documentation</h2>
+                <img class="homeIcon" src="images/d3logo.png">
+              </div>
+            </div>
+          </a>
+        </div>
 
-<ul>
-<li><a href="mailto:d3@pixar.com">Email</a></li>
-<li>
-<a href="https://macadmins.slack.com/messages/#d3/">Macadmins Slack Channel</a> (<a href="https://github.com/glenfarclas17" class="user-mention">@glenfarclas17</a>)</li>
-</ul>
+        <div class="col-sm-3">
+          <a class="homePanelLink" href="d3-3.0.9.pkg">
+            <div class="panel panel-default homePanel">
+              <div class="panel-body">
+                <h2>Download</h2>
+                <img class="homeIcon" src="./images/PackageIcon.png">
+              </div>
+            </div>
+          </a>
+        </div>
 
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+        <div class="col-sm-3">
+          <a class="homePanelLink" href="https://rubygems.org/gems/depot3">
+            <div class="panel panel-default homePanel">
+              <div class="panel-body">
+                <h2>Gem</h2>
+                <img class="homeIcon" src="images/rubygemsIcon.png">
+              </div>
+            </div>
+          </a>
+        </div>
 
-<p>Copyright 2016 Pixar</p>
-
-<p>Licensed under the Apache License, Version 2.0 (the "Apache License")
-with the following modification; you may not use d3 except in
-compliance with the Apache License and the following modification to it:</p>
-
-<p>Section 6. Trademarks. is deleted and replaced with:</p>
-
-<p>6. Trademarks. This License does not grant permission to use the trade
-  names, trademarks, service marks, or product names of the Licensor
-  and its affiliates, except as required to comply with Section 4(c) of
-  the License and to reproduce the content of the NOTICE file.</p>
-
-<p>You may obtain a copy of the Apache License at</p>
-
-<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
-
-<p>Unless required by applicable law or agreed to in writing, software
-distributed under the Apache License with the above modification is
-distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, either express or implied. See the Apache License for the specific
-language governing permissions and limitations under the Apache License.</p>
-      </section>
+        <div class="col-sm-3">
+          <a class="homePanelLink" href="https://github.com/PixarAnimationStudios/depot3">
+            <div class="panel panel-default homePanel">
+              <div class="panel-body">
+                <h2>Source</h2>
+                <img class="homeIcon" src="images/Octocat.png">
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">d3 maintained by <a href="https://github.com/PixarAnimationStudios">PixarAnimationStudios</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <h1><i class="fa fa-gears"></i> About</h1>
+
+          <div id="aboutText">
+
+            <p>
+              d3, also known as 'depot3', is a software deployment and patch-management system build on top
+              of the <a href="http://www.jamfsoftware.com/products/casper-suite/">Casper Suite</a> from
+              <a href="http://www.jamfsoftware.com/">JAMF Software, LLC</a>.
+              It adds these capabilities and more to Casper's package handling:
+            </p>
+            <p>
+              • Automatic software updates on clients when new versions are released on the server<br/>
+              • Pre-release piloting of new packages<br/>
+              • Customizable slideshow presented during logout/reboot installs<br/>
+              • Installs and uninstalls are conditional on the exit status of pre-flight scripts<br/>
+              • Packages can be expired (auto-uninstalled) after a period of disuse<br/>
+              • Both the client and admin tools are command-line only and fully scriptable<<br/>
+              • Command-line options allow integration with developer workflows &amp; other automation<br/>
+            </p>
+
+            <p>
+              It interfaces with Casper mostly via the REST API using the
+              <a href="https://github.com/PixarAnimationStudios/ruby-jss">JSS Ruby module</a>.
+              It also accesses the JSS's backend MySQL database directly to provide enhanced features.
+            </p>
+            <p>
+              d3 is available as an <a href="d3-3.0.9.pkg">installer package</a>, suitable for most users,
+              and a <a href="https://rubygems.org/gems/depot3/">Ruby gem</a> called 'depot3'. The source
+              code is in ruby and available from the
+              <a href="https://github.com/PixarAnimationStudios/depot3">depot3 github project</a>
+            </p>
+
+            <p>
+              Please see the <a class="homePanelLink" href="https://github.com/PixarAnimationStudios/depot3/wiki">Documentation</a>
+              for more info, as well as installation and setup details.
+            </p>
+
+            <p>
+              d3 is released under a modified Apache License v2.0. Please see the LICENSE.txt file for details.
+            </p>
+
+
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    
+  <!-- contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1><i class="fa fa-envelope-o"></i> Contact</h1>
+          <p><a href="mailto:d3@pixar.com">d3@pixar.com</a></p>
+          <br/>
+          <p><a href="https://macadmins.slack.com/messages/#d3/">Macadmins Slack Channel</a> (@glenfarclas17)</li></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  </body>
+  <!-- jQuery Version 1.11.0 -->
+  <script src="js/jquery-1.11.0.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Scrolling Nav JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/scrolling-nav.js"></script>
+
+</body>
+
 </html>
