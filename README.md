@@ -1,4 +1,4 @@
-# D3 / Depot3 IS NO LONGER SUPPORTED. 
+# D3 IS NO LONGER SUPPORTED. 
 
 It has been renamed 'Xolo' and completely re-written to use native Jamf Pro Patch management.
 
